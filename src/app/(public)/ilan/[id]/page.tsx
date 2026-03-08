@@ -33,10 +33,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const listing = await getListing(id)
 
   if (!listing) {
-    return { title: 'İlan Bulunamadı | Emlak Serkan' }
+    return { title: 'İlan Bulunamadı' }
   }
 
-  const title = `${listing.title} | Emlak Serkan`
+  const title = listing.title
   const description =
     listing.description?.slice(0, 160) ||
     `${listing.title} - Emlak Serkan ile gayrimenkul ilanı detayları.`
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     openGraph: {
-      title,
+      title: `${listing.title} | Emlak Serkan`,
       description,
       type: 'article',
       ...(listing.listing_images.length > 0 && {

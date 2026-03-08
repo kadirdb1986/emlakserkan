@@ -5,7 +5,6 @@ import FeaturedListings from '@/components/home/FeaturedListings'
 import RegionCards from '@/components/home/RegionCards'
 
 export const metadata: Metadata = {
-  title: 'Emlak Serkan | Arsa, Ev, Villa Satış',
   description:
     'Çatalca, Silivri, Kocaeli, Tekirdağ ve çevresinde arsa, ev, villa ve tarla satışı. Güvenilir emlak danışmanlığı.',
 }

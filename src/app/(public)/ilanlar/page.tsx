@@ -6,7 +6,7 @@ import ListingGrid from '@/components/listings/ListingGrid'
 import type { Listing, ListingImage, Region } from '@/lib/types/database'
 
 export const metadata: Metadata = {
-  title: 'İlanlar | Emlak Serkan',
+  title: 'İlanlar',
   description:
     'Arsa, ev, villa ve tarla ilanlarını inceleyin. Çatalca, Silivri, Kocaeli, Tekirdağ bölgelerinde satılık mülkler.',
 }

@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${region.name} Satılık Emlak | Emlak Serkan`,
+    title: `${region.name} Satılık Emlak`,
     description: `${region.name} bölgesinde satılık arsa, ev, villa ve tarla ilanları.`,
   }
 }

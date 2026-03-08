@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Shield, Clock, Briefcase, Users, MapPin, TreePine } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Hakkımızda | Emlak Serkan',
+  title: 'Hakkımızda',
   description:
     'Serkan Güner ve Emlak Serkan hakkında. Çatalca, Silivri, Kocaeli, Tekirdağ bölgelerinde güvenilir emlak danışmanlığı.',
 }

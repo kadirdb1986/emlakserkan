@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Phone, MapPin, TreePine } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'İletişim | Emlak Serkan',
+  title: 'İletişim',
   description:
     'Emlak Serkan ile iletişime geçin. Arsa, ev, villa ve tarla satışı için bizi arayın. Telefon: 0 539 773 62 55',
 }

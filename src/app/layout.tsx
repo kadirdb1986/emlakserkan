@@ -13,8 +13,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Emlak Serkan",
-  description: "Emlak Serkan - Gayrimenkul Danismanlik",
+  title: {
+    default: 'Emlak Serkan | Arsa, Ev, Villa Satış',
+    template: '%s | Emlak Serkan',
+  },
+  description:
+    'Çatalca, Silivri, Kocaeli, Tekirdağ ve çevresinde arsa, ev, villa ve tarla satışı. Güvenilir emlak danışmanlığı. Serkan Güner ile hayalinizdeki mülkü bulun.',
+  keywords: [
+    'emlak',
+    'arsa',
+    'ev',
+    'villa',
+    'tarla',
+    'satılık',
+    'Çatalca',
+    'Silivri',
+    'Kocaeli',
+    'Tekirdağ',
+    'Kapaklı',
+    'emlak serkan',
+    'Serkan Güner',
+  ],
+  authors: [{ name: 'Emlak Serkan' }],
+  creator: 'Emlak Serkan',
+  openGraph: {
+    type: 'website',
+    locale: 'tr_TR',
+    siteName: 'Emlak Serkan',
+    title: 'Emlak Serkan | Arsa, Ev, Villa Satış',
+    description:
+      'Çatalca, Silivri, Kocaeli, Tekirdağ ve çevresinde arsa, ev, villa ve tarla satışı.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
