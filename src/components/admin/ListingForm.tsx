@@ -34,20 +34,24 @@ export default function ListingForm({
 
   async function handleSubmit(formData: FormData) {
     setSubmitting(true)
+    // Set lat/lng from state since MapPicker manages them
+    if (latitude !== null) {
+      formData.set('latitude', String(latitude))
+    } else {
+      formData.delete('latitude')
+    }
+    if (longitude !== null) {
+      formData.set('longitude', String(longitude))
+    } else {
+      formData.delete('longitude')
+    }
     try {
-      // Set lat/lng from state since MapPicker manages them
-      if (latitude !== null) {
-        formData.set('latitude', String(latitude))
-      } else {
-        formData.delete('latitude')
-      }
-      if (longitude !== null) {
-        formData.set('longitude', String(longitude))
-      } else {
-        formData.delete('longitude')
-      }
       await action(formData)
-    } catch (err) {
+    } catch (err: unknown) {
+      // Re-throw Next.js redirect errors
+      if (err && typeof err === 'object' && 'digest' in err && typeof (err as Record<string, unknown>).digest === 'string' && ((err as Record<string, unknown>).digest as string).startsWith('NEXT_REDIRECT')) {
+        throw err
+      }
       alert(
         err instanceof Error
           ? err.message
