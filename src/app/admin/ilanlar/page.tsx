@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { Plus, Pencil, Trash2 } from 'lucide-react'
+import { Plus, Pencil } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
-import { deleteListing } from './actions'
+import { DeleteListingButton } from './DeleteButton'
 
 type ListingRow = {
   id: string
@@ -33,29 +33,6 @@ function typeLabel(type: string): string {
     diger: 'Diger',
   }
   return labels[type] ?? type
-}
-
-function DeleteButton({ id }: { id: string }) {
-  const deleteWithId = deleteListing.bind(null, id)
-
-  return (
-    <form
-      action={deleteWithId}
-      onSubmit={(e) => {
-        if (!confirm('Bu ilani silmek istediginize emin misiniz?')) {
-          e.preventDefault()
-        }
-      }}
-    >
-      <button
-        type="submit"
-        className="inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium text-red-700 bg-red-50 hover:bg-red-100 rounded-md transition-colors cursor-pointer"
-      >
-        <Trash2 className="w-3.5 h-3.5" />
-        Sil
-      </button>
-    </form>
-  )
 }
 
 export default async function AdminListingsPage() {
@@ -160,7 +137,7 @@ export default async function AdminListingsPage() {
                           <Pencil className="w-3.5 h-3.5" />
                           Duzenle
                         </Link>
-                        <DeleteButton id={listing.id} />
+                        <DeleteListingButton id={listing.id} />
                       </div>
                     </td>
                   </tr>
