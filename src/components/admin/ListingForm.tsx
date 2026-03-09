@@ -170,6 +170,7 @@ export default function ListingForm({
                 type="hidden"
                 name="show_price"
                 value="false"
+                disabled={listing?.show_price ?? true}
               />
               <input
                 type="checkbox"
@@ -311,6 +312,7 @@ export default function ListingForm({
               type="hidden"
               name="is_active"
               value="false"
+              disabled={listing?.is_active ?? true}
             />
             <input
               type="checkbox"
@@ -333,6 +335,7 @@ export default function ListingForm({
                 type="hidden"
                 name="is_sold"
                 value="false"
+                disabled={listing.is_sold}
               />
               <input
                 type="checkbox"
